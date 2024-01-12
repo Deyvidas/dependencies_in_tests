@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "dependencies-in-tests"
+version = "0.1.0"
+description = "How decorator dependency unify pytest-dependency and pytest-order. "
+authors = ["Deyvidas <devidbanyavichyus@yandex.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+# Dependencies that are required for the correct functioning of the project.
+[tool.poetry.group.prod.dependencies]
+
+
+
+# The requirements for running tests.
+[tool.poetry.group.test.dependencies]
+pytest-order = "^1.2.0"       # To change the order of tests.
+pytest-dependency = "^0.6.0"  # To skip tests if tests in the dependency are SKIPPED or FAILED.
+
+
+# Dependencies that are only used during the development stage of the project.
+[tool.poetry.group.dev.dependencies]
+black = "^23.12.1"            # To autoformat *.py files using PEP8.
+isort = "^5.13.2"             # To sort the imports.
+autoflake = "^2.2.1"          # To remove unused imports.
+mypy = "^1.8.0"               # To check typing of code in *.py files.
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
