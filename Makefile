@@ -35,7 +35,7 @@ mypy_check:	## Make mypy checking.
 		--python-executable python \
 		${ROOT_DIR}
 
-formating:	## Run make commands autoflake -> isort -> black -> mypy_check.
+formatting:	## Run make commands autoflake -> isort -> black -> mypy_check.
 	make autoflake
 	echo
 	make isort
